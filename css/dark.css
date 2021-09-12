@@ -1,0 +1,415 @@
+/* Dark Mode Toggle */
+
+@media screen and (min-width: 0px) {
+
+    :root {
+        --dark: #121212;
+        --medium: #292929;
+        --light: #3c3c3c;
+    }
+
+    .dark-mode-button {
+        background: transparent;
+        border: none;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top-dark-mode-button img {
+        display: block;
+        width: 15px;
+        position: absolute;
+    }
+
+    .top-dark-mode-button:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 35px;
+        width: 35px;
+        background: var(--primary);
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    body.dark-mode .top-dark-mode-button:before {
+        background: var(--medium);
+    }
+
+    .top-dark-mode-button .moon {
+        transform: translateY(0px);
+        transition: .3s ease;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .top-dark-mode-button .sun {
+        transform: translateY(30px);
+        transition: .3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    body.dark-mode .top-dark-mode-button .moon {
+        transform: translateY(-30px);
+        transition: .3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    body.dark-mode .top-dark-mode-button .sun {
+        transform: translateY(0);
+        transition: .3s ease;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .dark-mode-group {
+        position: absolute;
+        top: -340px;
+        right: 20px;
+        width: 80px;
+        height: 470px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    
+    .dark-mode-group p {
+        font-size: .7em !important;
+        text-align: center;
+        color: #fff;
+    }
+     
+    .top-dark-mode-button {
+        position: absolute;
+        top: 90px;
+        right: 16px;
+        z-index: 1000;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+        transition: .3s ease-in;
+        z-index: 1001;
+    }
+    
+    .dark-toggle.dark-mode {
+        background: var(--primary);
+        border: none;
+    }
+
+    body.dark-mode .button-solid {
+        color: #000 !important;
+    }
+    
+    /* Navigation */
+    
+    .dark {
+        display: none;
+        opacity: 0;
+        z-index: -1;
+    }
+    
+    body.dark-mode .dark {
+        display: block;
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    body.dark-mode .light {
+        display: none;
+    }
+    
+    body.dark-mode .side-nav a {
+        color: #fff;
+    }
+    
+    body.dark-mode .hamburger-inner, 
+    body.dark-mode .hamburger-inner::before, 
+    body.dark-mode .hamburger-inner::after {
+        background: #fff;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+    }
+
+    body.dark-mode .hamburger-inner {
+        background: transparent;
+    }
+    
+    body.dark-mode .hamburger.is-active .hamburger-inner::after,
+    body.dark-mode .hamburger.is-active .hamburger-inner::before {
+        background: #fff;
+    }
+    
+    /* Body and Core Elements */
+    body.dark-mode {
+        background: var(--dark);
+    }
+    
+    body.dark-mode h2, body.dark-mode p {
+        color: #fff;
+        opacity: .9;
+    }
+    
+    body.dark-mode p {
+        opacity: .9;
+    }
+    
+    body.dark-mode h3 {
+        color: var(--primary);
+    }
+
+    body.dark-mode .button-solid {
+        color: #222;
+        font-weight: bold;
+    }
+
+    body.dark-mode .navbar-menu {
+        background: var(--dark);
+    }
+
+    body.dark-mode .navbar-menu img {
+        display: none;
+    }
+    
+    /*-- -------------------------- -->
+    <---          LANDING           -->
+    <--- -------------------------- -*/
+    
+    body.dark-mode #hero {
+        background: url("../images/landing-dark.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000;
+    }
+
+    body.dark-mode #hero h1,
+    body.dark-mode #hero h1 span {
+        color: #fff;
+        opacity: .9;
+    }
+
+    body.dark-mode #hero .stat-container:before {
+        background: #000;
+    }
+
+    body.dark-mode #hero .stats .number,
+    body.dark-mode #hero .stats .text,
+    body.dark-mode #hero .stats .text span {
+        color: #fff;
+        opacity: .9;
+    }
+
+    /*-- -------------------------- -->
+    <---         Management         -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #management:after {
+        background: #01314b;
+        opacity: .9;
+    }
+
+    body.dark-mode #management .big-number {
+        color: var(--dark);
+    }
+
+    body.dark-mode #management #manage-p {
+        color: #222;
+    }
+
+    body.dark-mode .swap #tower {
+        opacity: .15;
+    }
+
+    /*-- -------------------------- -->
+    <---           Cards            -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #cards:before {
+        background: #212121;
+    }
+
+    body.dark-mode #cards .content {
+        background: #01314b;
+    }
+
+    /*-- -------------------------- -->
+    <---           Logos            -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #logos h2 {
+        opacity: .05;
+    }
+
+    /*-- -------------------------- -->
+    <---       Content Group        -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #content-group .container {
+        background: var(--dark);
+    }
+
+    body.dark-mode #content-group .image-group {
+        background: url("../images/city-dark.jpg");
+	    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /*-- -------------------------- -->
+    <---        Get Started         -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #get-started,
+    body.dark-mode #get-started:before,
+    body.dark-mode #get-started:after {
+        background: #01314b;
+    }
+
+    body.dark-mode #get-started .review:before,
+    body.dark-mode #get-started .review {
+        background: var(--dark);
+    }
+
+    body.dark-mode #get-started .review p,
+    body.dark-mode #get-started .review .name {
+        color: #fff;
+    }
+
+    body.dark-mode #get-started .review {
+        box-shadow: none;
+        filter: drop-shadow(36px 20px 34px rgba(26, 119, 170, 0.4)) 
+        drop-shadow(-20px -20px 43px rgba(80, 173, 224, .2));
+    }
+
+    body.dark-mode #get-started .stripes {
+        opacity: .1;
+    }
+
+    /*-- -------------------------- -->
+    <---           Footer           -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #footer {
+        background: var(--dark);
+    }
+
+    body.dark-mode #footer .contact {
+        color: #222;
+    }
+    
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+
+
+}
+
+/* Small Desktop */
+@media screen and (min-width: 1024px) {
+
+    body.dark-mode .navbar-menu img {
+        display: block;
+    }
+
+    body.dark-mode .navbar-menu {
+        overflow: visible;
+    }
+
+    body.dark-mode:before {
+        background: var(--dark);
+    }
+    
+    .top-dark-mode-button {
+        position: absolute;
+        left: auto;
+        top: 65px;
+        right: 32px;
+        z-index: 5000;
+    }
+
+    .top-dark-mode-button:after {
+        color: #000;
+    }
+
+    .top-dark-mode-button:before {
+        display: none;
+    }
+
+    body.dark-mode .navbar-menu:before {
+        background: var(--dark);
+    }
+
+    body.dark-mode .navbar-menu {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        background: transparent;
+    }
+
+    body.dark-mode #hero {
+        background-attachment: fixed;
+    }
+
+    body.dark-mode .schedule a {
+        color: var(--dark);
+    }
+
+    body.dark-mode .split .right .one {
+        border-bottom: 13px solid var(--dark);
+    }
+
+    body.dark-mode #process .card:before {
+        background: var(--medium);
+    }
+
+    body.dark-mode #process .card .green {
+        background: #1c4a49;
+    }
+
+    body.dark-mode #portfolio .line:before {
+        background: #1c4a49;
+    }
+
+    body.dark-mode #portfolio:before {
+        background: #1c4a49;
+    }
+
+    body.dark-mode #management p:before {
+        filter: drop-shadow(20px 20px 23px rgba(26, 119, 170, 0.4)) drop-shadow(-20px -20px 80px rgba(80, 173, 224, 0.5));
+    }
+}
+
+/* Intermediate Desktop */
+@media screen and (min-width: 1200px) {
+    .top-dark-mode-button {
+        right: auto;
+        left: 50%;
+        margin-left: 528px;
+    }
+}
+
+/* Regular Desktop */
+@media screen and (min-width: 1500px) {
+    body.dark-mode .split .right .one {
+        border-bottom: none;
+    }
+}
